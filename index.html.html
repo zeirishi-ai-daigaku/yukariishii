@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>石井佑香里さん アサイン提案資料</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
+    background: #fafaf7;
+    color: #2d2d35;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ====== Navigation ====== */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 8px;
+  }
+  .nav-title { font-size: 13px; font-weight: 700; color: #6b4f8e; }
+  .nav-links { display: flex; gap: 2px; flex-wrap: wrap; }
+  .nav-links a {
+    color: #555; text-decoration: none; font-size: 11px;
+    padding: 6px 10px; border-radius: 16px; transition: all 0.2s;
+  }
+  .nav-links a:hover { background: #f0e9f7; color: #6b4f8e; }
+
+  /* ====== Page ====== */
+  .page {
+    min-height: 100vh; padding: 90px 24px 70px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .page-inner { max-width: 1100px; width: 100%; }
+
+  /* ====== Cover ====== */
+  .cover {
+    background: linear-gradient(135deg, #f5ede4 0%, #e8d8ee 50%, #d5e7f0 100%);
+    text-align: center;
+  }
+  .cover-badge {
+    display: inline-block; padding: 8px 20px; background: #fff;
+    border-radius: 30px; font-size: 13px; font-weight: 600;
+    color: #6b4f8e; margin-bottom: 30px; letter-spacing: 1px;
+  }
+  .cover h1 {
+    font-size: 64px; font-weight: 900; color: #2d2d35;
+    margin-bottom: 12px; letter-spacing: -1px;
+  }
+  .cover .reading { font-size: 16px; color: #777; margin-bottom: 40px; letter-spacing: 4px; }
+  .cover h2 {
+    font-size: 24px; font-weight: 600; color: #4a3a6b;
+    margin-bottom: 24px; line-height: 1.6;
+  }
+  .cover-tagline {
+    font-size: 17px; color: #555; max-width: 780px; margin: 0 auto 30px;
+    padding: 24px; background: rgba(255,255,255,0.6);
+    border-radius: 16px; border-left: 4px solid #b896d4; line-height: 1.8;
+  }
+  .pivot-note {
+    display: inline-block; padding: 10px 22px;
+    background: #fff8ed; border: 1px dashed #e8b86b;
+    border-radius: 12px; font-size: 13px; color: #6b5638;
+    margin-bottom: 30px;
+  }
+  .cover-meta {
+    display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;
+    margin-top: 20px; font-size: 13px; color: #666;
+  }
+  .cover-meta span { padding: 6px 16px; background: #fff; border-radius: 20px; }
+
+  .cover-summary-cards {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 16px; margin-top: 40px; max-width: 800px;
+    margin-left: auto; margin-right: auto;
+  }
+  .summary-card {
+    background: rgba(255,255,255,0.8); padding: 20px; border-radius: 16px;
+    text-align: left;
+  }
+  .summary-card .num { font-size: 11px; font-weight: 800; color: #b896d4; letter-spacing: 2px; }
+  .summary-card .title { font-size: 15px; font-weight: 700; margin: 6px 0 4px; }
+  .summary-card .desc { font-size: 12px; color: #666; }
+
+  /* ====== Section Title ====== */
+  .section-num {
+    display: inline-block; font-size: 12px; font-weight: 700;
+    color: #b896d4; letter-spacing: 3px; margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: 38px; font-weight: 800; color: #2d2d35;
+    margin-bottom: 16px; letter-spacing: -0.5px;
+  }
+  .section-sub { font-size: 16px; color: #777; margin-bottom: 40px; }
+
+  /* ====== Profile Page ====== */
+  .profile-grid {
+    display: grid; grid-template-columns: 1fr 1.5fr; gap: 30px;
+  }
+  .profile-card {
+    background: #fff; border-radius: 24px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+  }
+  .profile-avatar {
+    width: 110px; height: 110px; border-radius: 50%;
+    background: linear-gradient(135deg, #f5ede4, #e8d8ee);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 44px; font-weight: 900; color: #6b4f8e;
+    margin: 0 auto 20px;
+  }
+  .profile-name { font-size: 26px; font-weight: 800; text-align: center; margin-bottom: 4px; }
+  .profile-name-sub { font-size: 13px; color: #999; text-align: center; margin-bottom: 24px; }
+  .profile-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 12px; }
+  .tag {
+    display: inline-block; padding: 4px 12px; border-radius: 14px;
+    font-size: 11px; font-weight: 600;
+  }
+  .tag-yellow { background: #fdf3c5; color: #8a6d00; }
+  .tag-pink { background: #fde2ec; color: #a34068; }
+  .tag-blue { background: #d8e8f5; color: #345a82; }
+  .tag-green { background: #d8efd8; color: #3f7a3f; }
+  .tag-purple { background: #ebe0f5; color: #6b4f8e; }
+  .tag-orange { background: #fde4d0; color: #a86028; }
+
+  .info-list { list-style: none; }
+  .info-row {
+    display: grid; grid-template-columns: 130px 1fr; gap: 16px;
+    padding: 12px 0; border-bottom: 1px dashed #eee; font-size: 14px;
+  }
+  .info-row:last-child { border-bottom: none; }
+  .info-label { color: #999; font-weight: 600; font-size: 12px; }
+  .info-value { color: #2d2d35; }
+
+  /* ====== Org Diagram ====== */
+  .org-section {
+    margin-top: 40px; background: #fff; border-radius: 24px; padding: 36px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  }
+  .org-section h3 { font-size: 18px; font-weight: 800; margin-bottom: 20px; }
+  .org-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  }
+  .org-block {
+    padding: 18px; border-radius: 14px; background: #faf7f2;
+    border-top: 3px solid #b896d4;
+  }
+  .org-block h4 {
+    font-size: 13px; font-weight: 800; color: #6b4f8e; margin-bottom: 8px;
+  }
+  .org-block ul { list-style: none; padding: 0; }
+  .org-block li {
+    font-size: 12px; color: #444; padding: 3px 0;
+  }
+  .org-block li.highlight {
+    color: #6b4f8e; font-weight: 800;
+    padding: 5px 8px; background: #f0e9f7; border-radius: 6px; margin-top: 4px;
+  }
+
+  /* ====== Career Page ====== */
+  .career-bg { background: #fff; }
+  .career-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  }
+  .career-card {
+    background: linear-gradient(135deg, #fff 0%, #faf7f2 100%);
+    border-radius: 20px; padding: 30px;
+    border: 1px solid #f0ebe5;
+  }
+  .career-icon {
+    width: 56px; height: 56px; border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; margin-bottom: 16px;
+  }
+  .career-icon.apparel { background: #fde2ec; }
+  .career-icon.it { background: #d8e8f5; }
+  .career-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+  .career-card .period { font-size: 12px; color: #999; margin-bottom: 16px; }
+  .career-card ul { list-style: none; padding-left: 0; }
+  .career-card li {
+    font-size: 14px; padding: 6px 0 6px 20px; position: relative;
+    color: #444;
+  }
+  .career-card li::before {
+    content: "▸"; position: absolute; left: 0; color: #b896d4;
+  }
+
+  .skill-section {
+    margin-top: 40px; padding: 36px;
+    background: linear-gradient(135deg, #f5ede4 0%, #ebe0f5 100%);
+    border-radius: 24px;
+  }
+  .skill-section h3 { font-size: 20px; font-weight: 800; margin-bottom: 20px; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+  .skill-tag {
+    background: #fff; padding: 10px 18px; border-radius: 24px;
+    font-size: 13px; font-weight: 600; color: #4a3a6b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  /* ====== Strengths Page ====== */
+  .strengths-bg { background: linear-gradient(180deg, #fafaf7 0%, #f5ede4 100%); }
+  .strengths-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+    margin-bottom: 36px;
+  }
+  .strength-card {
+    background: #fff; border-radius: 20px; padding: 28px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    border-top: 4px solid;
+  }
+  .strength-card.s1 { border-color: #d4a5b8; }
+  .strength-card.s2 { border-color: #a5c5d4; }
+  .strength-card.s3 { border-color: #b8d4a5; }
+  .strength-card.s4 { border-color: #d4c5a5; }
+  .strength-card .num { font-size: 12px; font-weight: 800; color: #b896d4; margin-bottom: 6px; }
+  .strength-card h3 { font-size: 19px; font-weight: 800; margin-bottom: 10px; }
+  .strength-card p { font-size: 13px; color: #555; }
+
+  .vision-block {
+    background: #fff; border-radius: 24px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    margin-bottom: 24px;
+  }
+  .vision-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .vision-item { padding: 22px; border-radius: 16px; background: #fafaf7; }
+  .vision-item .label {
+    display: inline-block; padding: 4px 12px; border-radius: 12px;
+    font-size: 12px; font-weight: 700; margin-bottom: 12px;
+  }
+  .label-will { background: #fde2ec; color: #a34068; }
+  .label-can { background: #d8e8f5; color: #345a82; }
+  .label-must { background: #d8efd8; color: #3f7a3f; }
+  .vision-item p { font-size: 13px; color: #444; line-height: 1.7; }
+
+  .stand-quote {
+    background: linear-gradient(135deg, #6b4f8e 0%, #8a6db5 100%);
+    color: #fff; padding: 36px; border-radius: 24px; text-align: center;
+  }
+  .stand-quote .label-text { display: inline-block; font-size: 12px; letter-spacing: 3px; opacity: 0.8; margin-bottom: 12px; }
+  .stand-quote .quote-text { font-size: 22px; font-weight: 700; line-height: 1.6; }
+
+  /* ====== 8-card grid (eval, aptitude) ====== */
+  .eight-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+  }
+  .eight-card {
+    background: #fff; border-radius: 16px; padding: 24px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    border-top: 3px solid #b896d4;
+  }
+  .eight-card .num {
+    display: inline-block; padding: 3px 10px;
+    background: #f0e9f7; color: #6b4f8e;
+    border-radius: 10px; font-size: 11px; font-weight: 800;
+    margin-bottom: 10px;
+  }
+  .eight-card h4 { font-size: 14px; font-weight: 800; margin-bottom: 10px; line-height: 1.4; }
+  .eight-card ul { list-style: none; padding: 0; margin-bottom: 12px; }
+  .eight-card li {
+    font-size: 12px; color: #555; padding: 3px 0 3px 12px;
+    position: relative; line-height: 1.5;
+  }
+  .eight-card li::before {
+    content: "·"; position: absolute; left: 4px; font-weight: 800; color: #b896d4;
+  }
+  .eight-card .insight {
+    margin-top: 12px; padding: 10px; background: #faf7f2;
+    border-radius: 8px; font-size: 11px; color: #4a3a6b;
+    font-weight: 600; line-height: 1.5;
+  }
+
+  /* ====== Hopes / Values Page ====== */
+  .hopes-bg { background: #fff; }
+  .hope-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    margin-bottom: 30px;
+  }
+  .hope-card {
+    background: linear-gradient(135deg, #fff 0%, #faf7f2 100%);
+    border-radius: 16px; padding: 22px; border: 1px solid #f0ebe5;
+  }
+  .hope-card .num-circle {
+    display: inline-flex; width: 28px; height: 28px;
+    background: #f5ede4; color: #a86028;
+    border-radius: 50%; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 800; margin-bottom: 10px;
+  }
+  .hope-card h4 { font-size: 15px; font-weight: 800; margin-bottom: 8px; }
+  .hope-card p { font-size: 12px; color: #555; line-height: 1.6; }
+
+  .value-section {
+    background: linear-gradient(135deg, #ebe0f5 0%, #d5e7f0 100%);
+    border-radius: 24px; padding: 36px;
+  }
+  .value-section h3 { font-size: 22px; font-weight: 800; margin-bottom: 20px; }
+  .value-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .value-item {
+    background: #fff; padding: 18px; border-radius: 14px;
+    text-align: center;
+  }
+  .value-item .icon { font-size: 28px; margin-bottom: 8px; }
+  .value-item h5 { font-size: 13px; font-weight: 800; margin-bottom: 6px; line-height: 1.4; }
+  .value-item p { font-size: 11px; color: #666; line-height: 1.5; }
+
+  /* ====== Issue Mapping Page ====== */
+  .issue-bg { background: linear-gradient(180deg, #fafaf7 0%, #fff 100%); }
+  .issue-section {
+    background: #fde4d0; border-radius: 24px; padding: 32px;
+    margin-bottom: 24px;
+  }
+  .issue-section h3 { font-size: 22px; font-weight: 800; color: #8a4a1c; margin-bottom: 16px; }
+  .issue-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .issue-item {
+    background: rgba(255,255,255,0.7); padding: 18px;
+    border-radius: 12px; border-left: 4px solid #c87038;
+  }
+  .issue-item h4 { font-size: 14px; font-weight: 800; color: #8a4a1c; margin-bottom: 6px; }
+  .issue-item p { font-size: 12px; color: #6b3a18; line-height: 1.6; }
+
+  .arrow-down { text-align: center; font-size: 36px; color: #b896d4; margin: 16px 0; }
+
+  .solution-section {
+    background: #d8efd8; border-radius: 24px; padding: 32px;
+  }
+  .solution-section h3 { font-size: 22px; font-weight: 800; color: #2d5a2d; margin-bottom: 16px; }
+  .solution-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .solution-item {
+    background: rgba(255,255,255,0.7); padding: 18px;
+    border-radius: 12px; border-left: 4px solid #4a8a4a;
+  }
+  .solution-item h4 { font-size: 14px; font-weight: 800; color: #2d5a2d; margin-bottom: 6px; }
+  .solution-item p { font-size: 12px; color: #1c4a1c; line-height: 1.6; }
+
+  .leader-quote {
+    margin-top: 24px; padding: 28px;
+    background: #fff8ed; border-radius: 16px;
+    border-left: 6px solid #e8b86b;
+  }
+  .leader-quote .quote-label {
+    font-size: 12px; font-weight: 700; color: #c08930; letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .leader-quote blockquote {
+    font-size: 15px; line-height: 1.8; color: #4a3920; font-weight: 500;
+  }
+  .leader-quote cite {
+    display: block; margin-top: 12px; font-size: 12px;
+    color: #999; font-style: normal;
+  }
+
+  /* ====== Position Page ====== */
+  .position-bg { background: linear-gradient(180deg, #f5ede4 0%, #fafaf7 100%); }
+  .position-hero {
+    background: #fff; border-radius: 28px; padding: 44px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+    text-align: center; margin-bottom: 36px;
+  }
+  .position-tag {
+    display: inline-block; padding: 6px 16px;
+    background: #6b4f8e; color: #fff; border-radius: 20px;
+    font-size: 12px; font-weight: 700; letter-spacing: 1px;
+    margin-bottom: 18px;
+  }
+  .position-name {
+    font-size: 30px; font-weight: 900; color: #2d2d35;
+    margin-bottom: 14px; line-height: 1.4;
+  }
+  .position-name .sub-pos {
+    display: block; font-size: 22px; color: #6b4f8e;
+    margin-top: 6px;
+  }
+  .position-future {
+    display: inline-block; padding: 6px 16px;
+    background: #f0e9f7; color: #6b4f8e; border-radius: 20px;
+    font-size: 12px; font-weight: 700; margin-top: 12px;
+  }
+  .position-desc {
+    font-size: 16px; color: #555; max-width: 720px; margin: 18px auto 0;
+  }
+
+  .pivot-banner {
+    background: #fff8ed; border: 1px dashed #e8b86b;
+    border-radius: 14px; padding: 16px 20px;
+    font-size: 13px; color: #6b5638;
+    margin-bottom: 24px; line-height: 1.7;
+  }
+
+  .role-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+    margin-bottom: 36px;
+  }
+  .role-item {
+    background: #fff; border-radius: 16px; padding: 22px;
+    border: 1px solid #f0ebe5;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .role-num {
+    flex-shrink: 0; width: 32px; height: 32px;
+    background: linear-gradient(135deg, #b896d4, #8a6db5);
+    color: #fff; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 13px;
+  }
+  .role-item h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .role-item .role-tag {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    padding: 2px 8px; border-radius: 10px;
+    margin-bottom: 6px;
+  }
+  .role-tag-a { background: #fde2ec; color: #a34068; }
+  .role-tag-b { background: #d8e8f5; color: #345a82; }
+  .role-tag-c { background: #d8efd8; color: #3f7a3f; }
+  .role-item p { font-size: 12px; color: #666; line-height: 1.6; }
+
+  .scope-section {
+    background: #fff; border-radius: 24px; padding: 36px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  }
+  .scope-section h3 { font-size: 20px; font-weight: 800; margin-bottom: 20px; }
+  .phase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .phase-card {
+    padding: 22px; border-radius: 14px; background: #faf7f2;
+    border-top: 4px solid #b896d4;
+  }
+  .phase-card .phase-label {
+    font-size: 11px; font-weight: 800; color: #6b4f8e;
+    letter-spacing: 2px; margin-bottom: 6px;
+  }
+  .phase-card h4 { font-size: 15px; font-weight: 800; margin-bottom: 8px; }
+  .phase-card p { font-size: 12px; color: #555; line-height: 1.6; }
+
+  /* ====== Outcome Page ====== */
+  .outcome-bg { background: #fff; }
+  .outcome-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    margin-bottom: 30px;
+  }
+  .outcome-card {
+    padding: 24px; border-radius: 16px;
+    background: linear-gradient(135deg, #fff 0%, #faf7f2 100%);
+    border: 1px solid #f0ebe5;
+  }
+  .outcome-card .icon { font-size: 28px; margin-bottom: 10px; }
+  .outcome-card h4 { font-size: 14px; font-weight: 800; margin-bottom: 8px; line-height: 1.4; }
+  .outcome-card p { font-size: 12px; color: #555; line-height: 1.6; }
+
+  .impact-block {
+    background: linear-gradient(135deg, #6b4f8e 0%, #4a3a6b 100%);
+    color: #fff; border-radius: 24px; padding: 36px; margin-bottom: 30px;
+  }
+  .impact-block h3 {
+    font-size: 22px; font-weight: 800; margin-bottom: 24px; text-align: center;
+  }
+  .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .impact-item {
+    background: rgba(255,255,255,0.1); padding: 20px;
+    border-radius: 14px; text-align: center;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .impact-item .label { font-size: 11px; opacity: 0.7; letter-spacing: 1px; margin-bottom: 6px; }
+  .impact-item .name { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+  .impact-item p { font-size: 12px; opacity: 0.9; line-height: 1.5; }
+
+  /* ====== Cost Page ====== */
+  .cost-bg { background: linear-gradient(180deg, #fafaf7 0%, #d5e7f0 100%); }
+  .cost-card {
+    background: #fff; border-radius: 24px; padding: 40px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-bottom: 24px;
+  }
+  .cost-table { width: 100%; border-collapse: collapse; }
+  .cost-table th, .cost-table td {
+    padding: 16px; text-align: left; border-bottom: 1px solid #eee;
+    font-size: 14px;
+  }
+  .cost-table th {
+    background: #faf7f2; font-weight: 800; color: #6b4f8e;
+    font-size: 12px; letter-spacing: 1px;
+  }
+  .cost-table .total { font-size: 18px; font-weight: 800; color: #6b4f8e; }
+  .cost-note {
+    margin-top: 16px; padding: 16px; background: #faf7f2;
+    border-radius: 12px; font-size: 12px; color: #666; line-height: 1.7;
+  }
+
+  .roi-block {
+    background: linear-gradient(135deg, #d8efd8 0%, #a5d4a5 100%);
+    border-radius: 20px; padding: 28px;
+  }
+  .roi-block h3 { font-size: 18px; font-weight: 800; color: #2d5a2d; margin-bottom: 12px; }
+  .roi-block p { font-size: 14px; color: #1c4a1c; line-height: 1.7; }
+
+  /* ====== Conditions ====== */
+  .conditions-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  }
+  .cond-card {
+    background: #fff; border-radius: 18px; padding: 24px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  }
+  .cond-icon { font-size: 28px; margin-bottom: 10px; }
+  .cond-card h4 { font-size: 13px; font-weight: 700; color: #999; margin-bottom: 6px; }
+  .cond-card .cond-value { font-size: 16px; font-weight: 800; margin-bottom: 6px; }
+  .cond-card p { font-size: 12px; color: #666; line-height: 1.5; }
+
+  .schedule-note {
+    margin-top: 24px; padding: 22px;
+    background: #fff8ed; border-radius: 14px;
+    border-left: 4px solid #e8b86b;
+    font-size: 13px; color: #6b5638; line-height: 1.7;
+  }
+
+  /* ====== Closing ====== */
+  .closing {
+    background: linear-gradient(135deg, #2d2d35 0%, #4a3a6b 100%);
+    color: #fff; text-align: center;
+  }
+  .closing h2 { font-size: 32px; font-weight: 800; margin-bottom: 20px; line-height: 1.5; }
+  .closing p { font-size: 16px; opacity: 0.85; max-width: 660px; margin: 0 auto 20px; }
+  .closing .signature { margin-top: 40px; font-size: 13px; opacity: 0.6; }
+
+  .approve-box {
+    margin-top: 30px; padding: 30px;
+    background: rgba(255,255,255,0.1); border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.2);
+    max-width: 580px; margin-left: auto; margin-right: auto;
+  }
+  .approve-box h3 { font-size: 17px; margin-bottom: 12px; }
+  .approve-box p { font-size: 14px; opacity: 0.95; line-height: 1.7; }
+
+  .key-message {
+    background: rgba(184,150,212,0.2); padding: 26px; border-radius: 16px;
+    margin: 30px auto; max-width: 720px;
+    border: 1px solid rgba(184,150,212,0.4);
+  }
+  .key-message .label { font-size: 11px; color: #d4b8e8; letter-spacing: 2px; margin-bottom: 8px; }
+  .key-message p { font-size: 18px; font-weight: 700; color: #fff; opacity: 1; line-height: 1.6; }
+
+  /* ====== Responsive ====== */
+  @media (max-width: 900px) {
+    .eight-grid, .conditions-grid, .impact-grid, .outcome-grid, .value-grid, .org-grid, .phase-grid { grid-template-columns: repeat(2, 1fr); }
+    .hope-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .cover h1 { font-size: 42px; }
+    .cover h2 { font-size: 18px; }
+    .section-title { font-size: 26px; }
+    .position-name { font-size: 22px; }
+    .position-name .sub-pos { font-size: 18px; }
+    .profile-grid, .career-grid, .strengths-grid,
+    .vision-grid, .role-grid, .conditions-grid,
+    .scope-list, .issue-list, .solution-grid,
+    .impact-grid, .outcome-grid, .eight-grid,
+    .hope-grid, .value-grid, .cover-summary-cards,
+    .org-grid, .phase-grid {
+      grid-template-columns: 1fr;
+    }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-title">石井佑香里さん｜アサイン提案資料</div>
+    <div class="nav-links">
+      <a href="#cover">表紙</a>
+      <a href="#profile">プロフィール</a>
+      <a href="#career">経歴</a>
+      <a href="#strengths">強み・志</a>
+      <a href="#evaluation">評価</a>
+      <a href="#aptitude">適性</a>
+      <a href="#hopes">希望・価値観</a>
+      <a href="#issue">課題と解決</a>
+      <a href="#position">ポジション</a>
+      <a href="#outcome">期待効果</a>
+      <a href="#cost">コスト</a>
+      <a href="#conditions">稼働条件</a>
+      <a href="#closing">承認</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ COVER ============ -->
+<section class="page cover" id="cover">
+  <div class="page-inner">
+    <div class="cover-badge">ASSIGNMENT PROPOSAL · 2026.04</div>
+    <h1>石井 佑香里</h1>
+    <div class="reading">ISHII YUKARI</div>
+    <h2>
+      税理士AI大学 セミナー管理・運用ディレクター<br>
+      兼 業務ディレクターチームコーディネーター<br>
+      <span style="font-size:16px; color:#777;">（いずれ管理マネージャーへ）</span>
+    </h2>
+    <div class="cover-tagline">
+      AI活用と<strong>「実行型ディレクター」</strong>としての適性を兼ね備えた人材。<br>
+      税理士AI大学のセミナー運用＋業務ディレクターチームの調整役を担い、<br>
+      さらに<strong>AIクルー（業務委託メンバー）の調整役</strong>として全体を整える、<br>
+      組織の<strong>運営最適化フェーズ</strong>を支える存在として推薦します。
+    </div>
+
+    <div class="pivot-note">
+      📌 当初はマーケティング・クリエイティブ業務を想定していましたが、本人の適性・希望を踏まえてポジションを変更しています
+    </div>
+
+    <div class="cover-summary-cards">
+      <div class="summary-card">
+        <div class="num">SUMMARY 01</div>
+        <div class="title">優秀ではなく「不足機能そのもの」</div>
+        <div class="desc">現場・組織・設計を全部補える稀少な人材</div>
+      </div>
+      <div class="summary-card">
+        <div class="num">SUMMARY 02</div>
+        <div class="title">月78,000円〜90,000円</div>
+        <div class="desc">時給1,300円→1,500円（6月〜PM昇格）</div>
+      </div>
+      <div class="summary-card">
+        <div class="num">SUMMARY 03</div>
+        <div class="title">業ディレリーダー星野さん合意済</div>
+        <div class="desc">即時稼働可能・本人合意済み</div>
+      </div>
+    </div>
+
+    <div class="cover-meta" style="margin-top:40px;">
+      <span>採用枠: 業務委託パートナー</span>
+      <span>稼働: 1日3時間 × 月20日</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROFILE ============ -->
+<section class="page" id="profile">
+  <div class="page-inner">
+    <div class="section-num">PAGE 01 · PROFILE</div>
+    <h2 class="section-title">基本プロフィール</h2>
+    <p class="section-sub">業務委託パートナーとして稼働中。リモート前提で柔軟な働き方が可能。</p>
+
+    <div class="profile-grid">
+      <div class="profile-card">
+        <div class="profile-avatar">石</div>
+        <div class="profile-name">石井 佑香里</div>
+        <div class="profile-name-sub">イシイ ユカリ ／ 呼称: イシイ</div>
+        <div class="profile-tags">
+          <span class="tag tag-yellow">業務委託パートナー</span>
+          <span class="tag tag-purple">税理士AI大学</span>
+        </div>
+        <div class="profile-tags">
+          <span class="tag tag-pink">AI業務ディレクター</span>
+          <span class="tag tag-pink">AIエンジニア</span>
+          <span class="tag tag-pink">AIセミナー講師</span>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <ul class="info-list">
+          <li class="info-row">
+            <span class="info-label">生年月日</span>
+            <span class="info-value">1985年6月2日（40歳）</span>
+          </li>
+          <li class="info-row">
+            <span class="info-label">対応可能領域</span>
+            <span class="info-value">全国／全世界出張可能<br>ディレクター・AI・WEBディレクション・WEB広告</span>
+          </li>
+          <li class="info-row">
+            <span class="info-label">対応可能時間</span>
+            <span class="info-value">9:00〜23:00（柔軟調整可）</span>
+          </li>
+          <li class="info-row">
+            <span class="info-label">対応可能曜日</span>
+            <span class="info-value">月・火・水・木・金・土</span>
+          </li>
+          <li class="info-row">
+            <span class="info-label">本業</span>
+            <span class="info-value">不動産Webマーケ会社にてPM業務（業務委託）<br>※副業可、リモートで稼働調整可能</span>
+          </li>
+          <li class="info-row">
+            <span class="info-label">家族状況</span>
+            <span class="info-value">1歳児あり／18時前後の調整に配慮要<br>（夫の協力体制あり、事前調整で残業対応可）</span>
+          </li>
+          <li class="info-row">
+            <span class="info-label">紹介元</span>
+            <span class="info-value">AIスクール</span>
+          </li>
+          <li class="info-row">
+            <span class="info-label">アサイン合意者</span>
+            <span class="info-value">星野さん（業務ディレクターチームリーダー）</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="org-section">
+      <h3>関係する組織体制（参考）</h3>
+      <div class="org-grid">
+        <div class="org-block">
+          <h4>🎓 税理士AI大学</h4>
+          <ul>
+            <li>倉岡（責任者）</li>
+            <li>片山さん</li>
+            <li>星野さん（メイン）</li>
+            <li>佐々木さん</li>
+            <li class="highlight">+ 石井さん（提案）</li>
+          </ul>
+        </div>
+        <div class="org-block">
+          <h4>⚙️ 業務ディレクターチーム</h4>
+          <ul>
+            <li>星野さん（リーダー）</li>
+            <li>佐々木さん</li>
+            <li>宮崎さん</li>
+            <li>AIクルー（業務委託メンバー）</li>
+            <li class="highlight">+ 石井さん（コーディネーター／AIクルー調整）</li>
+          </ul>
+        </div>
+        <div class="org-block">
+          <h4>🚀 ウツセバ全体</h4>
+          <ul>
+            <li><strong>佐藤さん（代表）</strong></li>
+            <li>└ 羽田さん（COO／AIX事業PM）</li>
+            <li>└ 人事採用チーム</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAREER ============ -->
+<section class="page career-bg" id="career">
+  <div class="page-inner">
+    <div class="section-num">PAGE 02 · CAREER & SKILLS</div>
+    <h2 class="section-title">経歴・スキルセット</h2>
+    <p class="section-sub">アパレルでの経営・マーケから、ITディレクション・AI導入までを横断するハイブリッド人材。</p>
+
+    <div class="career-grid">
+      <div class="career-card">
+        <div class="career-icon apparel">🛍️</div>
+        <h3>アパレル業界</h3>
+        <div class="period">経営〜マーケまで横断的に経験</div>
+        <ul>
+          <li>EC・実店舗運営</li>
+          <li>マーチャンダイジング</li>
+          <li>マーケティング</li>
+          <li>経営企画</li>
+          <li>業務システム開発</li>
+        </ul>
+      </div>
+
+      <div class="career-card">
+        <div class="career-icon it">💻</div>
+        <h3>IT業界（現職含む）</h3>
+        <div class="period">PM・ディレクション領域でAIを実装</div>
+        <ul>
+          <li>WEBディレクション（サイト・広告）</li>
+          <li>カスタマーサポート構築・運営（BtoB）</li>
+          <li>SaaS導入／AI導入</li>
+          <li>システム研修講師</li>
+          <li>社内のAI活用推進リード</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="skill-section">
+      <h3>得意・慣れている領域</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">プロジェクトマネジメント</span>
+        <span class="skill-tag">ディレクション業務</span>
+        <span class="skill-tag">ヒアリング・要件定義</span>
+        <span class="skill-tag">スプレッドシート業務ツール作成（GAS）</span>
+        <span class="skill-tag">GPTs / Gems活用ツール作成</span>
+        <span class="skill-tag">ChatGPT</span>
+        <span class="skill-tag">Genspark</span>
+        <span class="skill-tag">Claude（Claude Code導入予定）</span>
+        <span class="skill-tag">デザイン・文章作成（インプットあれば対応可）</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STRENGTHS / VISION ============ -->
+<section class="page strengths-bg" id="strengths">
+  <div class="page-inner">
+    <div class="section-num">PAGE 03 · STRENGTHS & VISION</div>
+    <h2 class="section-title">強み・志（Will / Can / Must）</h2>
+    <p class="section-sub">人を活かしながら、価値創造に集中できる環境を整えるタイプ。</p>
+
+    <div class="strengths-grid">
+      <div class="strength-card s1">
+        <div class="num">STRENGTH 01</div>
+        <h3>人間関係重視 / 信頼構築</h3>
+        <p>派手さでなく、信頼を積み上げて周囲が動きやすい形をつくる力。</p>
+      </div>
+      <div class="strength-card s2">
+        <div class="num">STRENGTH 02</div>
+        <h3>計画性 / 秩序感覚</h3>
+        <p>整理力で混乱しがちな立ち上げ期の運営を安定軌道に乗せる。</p>
+      </div>
+      <div class="strength-card s3">
+        <div class="num">STRENGTH 03</div>
+        <h3>課題解決力 / 論理的思考</h3>
+        <p>要件定義・ヒアリングを通じて本質的な課題を抽出。</p>
+      </div>
+      <div class="strength-card s4">
+        <div class="num">STRENGTH 04</div>
+        <h3>4軸のバランス</h3>
+        <p>創造的・対人的・組織的・分析的が均等。領域横断で動ける希少なタイプ。</p>
+      </div>
+    </div>
+
+    <div class="vision-block">
+      <div class="vision-grid">
+        <div class="vision-item">
+          <span class="label label-will">WILL · 目指したい姿</span>
+          <p>自分の得た価値観を、自分だけに認める状態から、周囲に還元し循環する社会へ。</p>
+        </div>
+        <div class="vision-item">
+          <span class="label label-can">CAN · 持ち味</span>
+          <p>価値観や世界観を言語化し、人やチームが本来の力を発揮できる状態を、持続可能なかたちでつくる。</p>
+        </div>
+        <div class="vision-item">
+          <span class="label label-must">MUST · 必要なこと</span>
+          <p>AIを活用し業務やコミュニケーションを整え、人やチームがより価値ある仕事に集中できる状態をつくる。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stand-quote">
+      <div class="label-text">立志 · STANDPOINT</div>
+      <div class="quote-text">
+        一人ひとりが本来の力を発揮し、<br>価値創造に集中できる環境を整えること
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EVALUATION (8 points) ============ -->
+<section class="page" id="evaluation" style="background: linear-gradient(180deg, #fafaf7 0%, #fff 100%);">
+  <div class="page-inner">
+    <div class="section-num">PAGE 04 · EVALUATION FROM KURAOKA</div>
+    <h2 class="section-title">倉岡からの評価ポイント（8項目）</h2>
+    <p class="section-sub">「優秀」ではなく、組織に「不足している機能そのもの」として評価しています。</p>
+
+    <div class="eight-grid">
+      <div class="eight-card">
+        <span class="num">POINT 01</span>
+        <h4>セミナー運営スキル<br>（即戦力としての価値）</h4>
+        <ul>
+          <li>Zoom運用・進行管理の実務力</li>
+          <li>トラブルなく回せる安定感</li>
+          <li>現場対応力の高さ</li>
+        </ul>
+        <div class="insight">「いなかったら講座が実現できなかった」レベル</div>
+      </div>
+      <div class="eight-card">
+        <span class="num">POINT 02</span>
+        <h4>ビジネス的な信頼性・<br>安心感</h4>
+        <ul>
+          <li>任せても不安がない</li>
+          <li>状況に応じた柔軟判断</li>
+          <li>過度な説明なしで動ける</li>
+        </ul>
+        <div class="insight">「安心して任せられる」が象徴的</div>
+      </div>
+      <div class="eight-card">
+        <span class="num">POINT 03</span>
+        <h4>ディレクション適性<br>（本質的な期待）</h4>
+        <ul>
+          <li>全体を俯瞰して整理</li>
+          <li>実行可能な形に落とし込み</li>
+          <li>現場と設計の両理解</li>
+        </ul>
+        <div class="insight">「まさに得意なんじゃないかと思っていた」</div>
+      </div>
+      <div class="eight-card">
+        <span class="num">POINT 04</span>
+        <h4>組織の調整力・<br>橋渡し力</h4>
+        <ul>
+          <li>人と人のズレを埋める</li>
+          <li>摩擦を緩和できる</li>
+          <li>立場の異なる人をつなぐ</li>
+        </ul>
+        <div class="insight">「摩擦を解消できる存在」</div>
+      </div>
+      <div class="eight-card">
+        <span class="num">POINT 05</span>
+        <h4>広い視野・<br>バランス感覚</h4>
+        <ul>
+          <li>全体最適で考えられる</li>
+          <li>極端に走らない</li>
+          <li>組織の持続性を重視</li>
+        </ul>
+        <div class="insight">「幅広く広い視野で見ていただける人」</div>
+      </div>
+      <div class="eight-card">
+        <span class="num">POINT 06</span>
+        <h4>スキルの汎用性・<br>再現性</h4>
+        <ul>
+          <li>特定領域に閉じない</li>
+          <li>他領域でも応用可能</li>
+          <li>倉岡以上のスキルもあり</li>
+        </ul>
+        <div class="insight">「自分以上にスキルがある部分がある」</div>
+      </div>
+      <div class="eight-card">
+        <span class="num">POINT 07</span>
+        <h4>組織フェーズに<br>合った人材</h4>
+        <ul>
+          <li>急拡大フェーズに必要</li>
+          <li>カオスを整理できる</li>
+          <li>"今まさに必要な人"</li>
+        </ul>
+        <div class="insight">「今すごく必要な存在」</div>
+      </div>
+      <div class="eight-card">
+        <span class="num">POINT 08</span>
+        <h4>人材マネジメントへの<br>期待</h4>
+        <ul>
+          <li>ディレクターの質を上げる</li>
+          <li>働きやすい環境を作れる</li>
+          <li>サービス品質を底上げ</li>
+        </ul>
+        <div class="insight">組織の"質"を担う役割として期待</div>
+      </div>
+    </div>
+
+    <div class="leader-quote" style="margin-top:30px;">
+      <div class="quote-label">一言でまとめると</div>
+      <blockquote>
+        実務もできて、組織も回せる<strong>「実行型ディレクター」</strong>。<br>
+        現場・組織・設計を「全部補える人」として石井さんを見ている。
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APTITUDE (8 points) ============ -->
+<section class="page" id="aptitude" style="background: linear-gradient(180deg, #fff 0%, #f5ede4 100%);">
+  <div class="page-inner">
+    <div class="section-num">PAGE 05 · APTITUDE ANALYSIS</div>
+    <h2 class="section-title">適性分析（8項目）</h2>
+    <p class="section-sub">現場と組織をつなぎ、実行できる形に整えるディレクター型人材。</p>
+
+    <div class="eight-grid">
+      <div class="eight-card">
+        <span class="num">APTITUDE 01</span>
+        <h4>構造化・整理能力<br>（中核スキル）</h4>
+        <ul>
+          <li>状況を整理して理解</li>
+          <li>抽象と具体をつなぐ</li>
+          <li>「どう回すか」に思考が向く</li>
+        </ul>
+        <div class="insight">混乱した組織で最も価値が出るタイプ</div>
+      </div>
+      <div class="eight-card">
+        <span class="num">APTITUDE 02</span>
+        <h4>実行ベースの<br>ディレクション力</h4>
+        <ul>
+          <li>理想論ではなく実行へ</li>
+          <li>現場理解の上で設計</li>
+          <li>オペレーション視点</li>
+        </ul>
+        <div class="insight">「設計だけの人」ではなく「回せる人」</div>
+      </div>
+      <div class="eight-card">
+        <span class="num">APTITUDE 03</span>
+        <h4>調整力・<br>バランス感覚</h4>
+        <ul>
+          <li>人と人の間に入れる</li>
+          <li>対立・ズレを吸収</li>
+          <li>極端に偏らない判断</li>
+        </ul>
+        <div class="insight">摩擦を減らす"緩衝材"として機能</div>
+      </div>
+      <div class="eight-card">
+        <span class="num">APTITUDE 04</span>
+        <h4>マネジメント適性<br>（成熟型）</h4>
+        <ul>
+          <li>「人は正しさで動かない」</li>
+          <li>現実的なマネジメント観</li>
+          <li>関係性重視</li>
+        </ul>
+        <div class="insight">若手に少ない実務経験型マネジメント</div>
+      </div>
+      <div class="eight-card">
+        <span class="num">APTITUDE 05</span>
+        <h4>持続性志向<br>（組織づくりの軸）</h4>
+        <ul>
+          <li>「笑顔の80点」を重視</li>
+          <li>短期より継続性優先</li>
+          <li>無理のない運用設計</li>
+        </ul>
+        <div class="insight">拡大フェーズの組織と相性◎</div>
+      </div>
+      <div class="eight-card">
+        <span class="num">APTITUDE 06</span>
+        <h4>現場理解を<br>重視する姿勢</h4>
+        <ul>
+          <li>現場に出続けたい意向</li>
+          <li>実態を知らない状態を嫌う</li>
+        </ul>
+        <div class="insight">結果として「現実に強い判断」ができる</div>
+      </div>
+      <div class="eight-card">
+        <span class="num">APTITUDE 07</span>
+        <h4>慎重かつ現実的な<br>意思決定</h4>
+        <ul>
+          <li>いきなり責任を取らない</li>
+          <li>試しながら関わる</li>
+          <li>信頼関係を重視</li>
+        </ul>
+        <div class="insight">失敗確率が低いタイプ</div>
+      </div>
+      <div class="eight-card">
+        <span class="num">APTITUDE 08</span>
+        <h4>学習・<br>成長志向</h4>
+        <ul>
+          <li>新領域（AI）への関心</li>
+          <li>知見を蓄積し拡張</li>
+        </ul>
+        <div class="insight">長期的に伸びる人材</div>
+      </div>
+    </div>
+
+    <div class="stand-quote" style="margin-top:30px;">
+      <div class="label-text">強みの本質</div>
+      <div class="quote-text">理想を、現実に変換できる</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOPES & VALUES ============ -->
+<section class="page hopes-bg" id="hopes">
+  <div class="page-inner">
+    <div class="section-num">PAGE 06 · HOPES & VALUES</div>
+    <h2 class="section-title">石井さんの希望業務 ＆ 思考・価値観</h2>
+    <p class="section-sub">「現場を理解しながら、組織を回せるAIディレクターになりたい」</p>
+
+    <h3 style="font-size:18px; font-weight:800; margin-bottom:16px; color:#a86028;">■ 希望している業務（6項目）</h3>
+    <div class="hope-grid">
+      <div class="hope-card">
+        <span class="num-circle">1</span>
+        <h4>ディレクター業務</h4>
+        <p>「ディレクター業ができれば嬉しい」。AI領域のディレクションに特に関心。全体を設計・管理する立場を志向。</p>
+      </div>
+      <div class="hope-card">
+        <span class="num-circle">2</span>
+        <h4>AI領域への関与</h4>
+        <p>キャリア形成の軸としてAIに関わりたい。外部でもAI講師を始めるなど、成長軸として強い意欲。</p>
+      </div>
+      <div class="hope-card">
+        <span class="num-circle">3</span>
+        <h4>現場にも関わり続けたい</h4>
+        <p>「現場には出ておきたい」。机上のディレクターではなく、現場理解型ディレクター志向。</p>
+      </div>
+      <div class="hope-card">
+        <span class="num-circle">4</span>
+        <h4>段階的な関与拡大</h4>
+        <p>「いきなりリーダーでなくていい」。信頼関係を築きながら役割を広げたい慎重で現実的なスタンス。</p>
+      </div>
+      <div class="hope-card">
+        <span class="num-circle">5</span>
+        <h4>人材配置・改善への関与</h4>
+        <p>誰をどこに配置するかに前向き。講師選定・人材見極めにも関心。組織づくり・人材戦略にも興味あり。</p>
+      </div>
+      <div class="hope-card">
+        <span class="num-circle">6</span>
+        <h4>セミナー運営・設計</h4>
+        <p>フォローアップ会の設計・運用、人員調整、効率的な運用設計。実務も厭わないが「設計側」として担いたい。</p>
+      </div>
+    </div>
+
+    <div class="value-section">
+      <h3>■ 思考・価値観（5項目）</h3>
+      <div class="value-grid">
+        <div class="value-item">
+          <div class="icon">😊</div>
+          <h5>気持ちよく働ける組織</h5>
+          <p>「全員が辛い100点より、笑顔の80点」</p>
+        </div>
+        <div class="value-item">
+          <div class="icon">🎯</div>
+          <h5>実行可能性重視</h5>
+          <p>理想論より現場で回るかどうか</p>
+        </div>
+        <div class="value-item">
+          <div class="icon">🤝</div>
+          <h5>関係性で人は動く</h5>
+          <p>正しさより環境・関係性</p>
+        </div>
+        <div class="value-item">
+          <div class="icon">🪜</div>
+          <h5>試しながら拡張</h5>
+          <p>リスクを抑え選択肢を広げる</p>
+        </div>
+        <div class="value-item">
+          <div class="icon">📚</div>
+          <h5>成長ドリブン</h5>
+          <p>金銭より経験・学習価値</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ISSUE & SOLUTION ============ -->
+<section class="page issue-bg" id="issue">
+  <div class="page-inner">
+    <div class="section-num">PAGE 07 · ORGANIZATIONAL ISSUE & SOLUTION</div>
+    <h2 class="section-title">業務ディレクターチームの課題と<br>石井さんがもたらす解決</h2>
+    <p class="section-sub">業ディレチームリーダーの星野さんからも共有された組織課題。石井さんのアサインで構造的に解決可能です。</p>
+
+    <div class="issue-section">
+      <h3>📛 業務ディレクターチームの現状課題</h3>
+      <p style="font-size:13px; color:#6b3a18; margin-bottom:16px;">
+        ※ チーム構成: 星野さん（リーダー）／佐々木さん／宮崎さん
+      </p>
+      <div class="issue-list">
+        <div class="issue-item">
+          <h4>① 業務範囲が不明確</h4>
+          <p>担当被り・抜け漏れが発生。Slack/LINEの返信などが代表例。</p>
+        </div>
+        <div class="issue-item">
+          <h4>② ワークフローが曖昧</h4>
+          <p>5W1Hで設定されておらず「ふわっとしている」。</p>
+        </div>
+        <div class="issue-item">
+          <h4>③ 担当外の混乱発生</h4>
+          <p>担当外メンバーが他クライアントへ謎チャット送信。混乱を招く事案あり。</p>
+        </div>
+        <div class="issue-item">
+          <h4>④ リーダー星野さんの負担過多</h4>
+          <p>佐々木さんが動けず、星野さんがやむを得ず調整役・仕組み作りを兼務している状態。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow-down">▼</div>
+
+    <div class="solution-section">
+      <h3>✅ 石井さんがもたらす解決</h3>
+      <div class="solution-grid">
+        <div class="solution-item">
+          <h4>① 業務範囲の明確化</h4>
+          <p>構造化・整理能力を発揮し、5W1Hで業務範囲を可視化・棲み分け。</p>
+        </div>
+        <div class="solution-item">
+          <h4>② ワークフローの標準化</h4>
+          <p>実行ベースの設計力で、誰が見ても回せるワークフローへ整備。</p>
+        </div>
+        <div class="solution-item">
+          <h4>③ 調整役・橋渡しの常駐</h4>
+          <p>調整力・摩擦緩衝が強み。担当外の混乱を未然防止する役割を担う。</p>
+        </div>
+        <div class="solution-item">
+          <h4>④ 星野さんのリソース解放</h4>
+          <p>調整役・仕組み作りタスクを正式に引き受け、星野さんが本来業務に集中可能に。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="leader-quote">
+      <div class="quote-label">星野さん（業務ディレクターチームリーダー）からのコメント</div>
+      <blockquote>
+        「かなり優秀で、どんな業務を任せるってなっても違和感がない。<br>
+        石井さんが入ってくれるならより組織が良くなるイメージがある<strong>ので賛成</strong>です。<br>
+        現状やむを得ずディレクターの調整役や仕組み作りをやっているが、できれば手放したいタスク。<br>
+        <strong>組織的にも個人的にも、めっちゃありがたいです！</strong>」
+      </blockquote>
+      <cite>— 星野さん（業務ディレクターチームリーダー／面談同席）</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POSITION ============ -->
+<section class="page position-bg" id="position">
+  <div class="page-inner">
+    <div class="section-num">PAGE 08 · PROPOSED POSITION</div>
+    <h2 class="section-title">提案するポジション</h2>
+    <p class="section-sub">セミナー運用 ＋ 業ディレ調整 ＋ AIクルー調整。組織横断で「整える」役割を担う。</p>
+
+    <div class="pivot-banner">
+      <strong>📌 ポジション方針の修正:</strong> 当初はマーケティング・クリエイティブ業務を中心にお願いする想定でしたが、面談・適性分析を通じて、本人の希望（ディレクター業務／AI領域／段階的関与）と組織課題（業ディレ調整・AIクルー調整）が一致したため、以下のポジションへ修正しています。
+    </div>
+
+    <div class="position-hero">
+      <div class="position-tag">PROPOSED ROLE</div>
+      <div class="position-name">
+        税理士AI大学<br>セミナー管理・運用ディレクター
+        <span class="sub-pos">兼 業務ディレクターチーム コーディネーター</span>
+      </div>
+      <div class="position-future">FUTURE: いずれ管理マネージャーへ昇格</div>
+      <p class="position-desc">
+        セミナー運用の現場を回しながら、業務ディレクターチーム＋AIクルーの調整役を担う「組織横断のコーディネーター」。
+        本人の段階的関与スタンスに沿い、信頼形成とともに管理マネージャー職へ移行する設計。
+      </p>
+    </div>
+
+    <div class="role-grid">
+      <div class="role-item">
+        <div class="role-num">1</div>
+        <div>
+          <span class="role-tag role-tag-a">セミナー運用</span>
+          <h4>セミナー管理・運用ディレクション</h4>
+          <p>月3回のセミナー進行管理、Zoom運用、チャット対応・リンク配信、フォローアップ会の設計・運用。</p>
+        </div>
+      </div>
+      <div class="role-item">
+        <div class="role-num">2</div>
+        <div>
+          <span class="role-tag role-tag-a">セミナー運用</span>
+          <h4>講師選定・適正・スキルアップ支援</h4>
+          <p>講師アサインの見極め、ディレクション品質の底上げ、講師スキル向上の仕組みづくり。</p>
+        </div>
+      </div>
+      <div class="role-item">
+        <div class="role-num">3</div>
+        <div>
+          <span class="role-tag role-tag-b">業ディレ調整</span>
+          <h4>業務ディレクターチームのコーディネート</h4>
+          <p>星野さん・佐々木さん・宮崎さんの業務範囲を5W1Hで明確化。重複・抜け漏れを構造的に解消。</p>
+        </div>
+      </div>
+      <div class="role-item">
+        <div class="role-num">4</div>
+        <div>
+          <span class="role-tag role-tag-b">業ディレ調整</span>
+          <h4>ワークフロー再設計・標準化</h4>
+          <p>属人化したオペレーションを誰でも回せる形へ。Slack/LINE運用ルールの整備含む。</p>
+        </div>
+      </div>
+      <div class="role-item">
+        <div class="role-num">5</div>
+        <div>
+          <span class="role-tag role-tag-c">AIクルー調整</span>
+          <h4>AIクルー（業務委託メンバー）の調整役</h4>
+          <p>業務委託メンバーへのアサイン調整、稼働状況の可視化、品質管理。組織横断のハブ機能を担う。</p>
+        </div>
+      </div>
+      <div class="role-item">
+        <div class="role-num">6</div>
+        <div>
+          <span class="role-tag role-tag-c">AIクルー調整</span>
+          <h4>人材配置・適正判断</h4>
+          <p>誰をどこに配置するかの設計。本人の希望「人材配置・改善への関与」と完全合致。</p>
+        </div>
+      </div>
+      <div class="role-item">
+        <div class="role-num">7</div>
+        <div>
+          <span class="role-tag role-tag-a">セミナー運用</span>
+          <h4>運用改善・無駄コスト排除</h4>
+          <p>セミナー運営の効率化、重複作業の削減、運用コストの最適化。</p>
+        </div>
+      </div>
+      <div class="role-item">
+        <div class="role-num">8</div>
+        <div>
+          <span class="role-tag role-tag-c">AIクルー調整</span>
+          <h4>AIX事業との連携窓口</h4>
+          <p>羽田さん（COO／AIX事業PM）主導のAIX事業との橋渡し。グループ横断でのAIクルー稼働を整える。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scope-section">
+      <h3>段階的な関与プラン（本人の希望「試しながら関与拡大」に沿った設計）</h3>
+      <div class="phase-grid">
+        <div class="phase-card">
+          <div class="phase-label">PHASE 1 · 1〜2ヶ月目</div>
+          <h4>セミナー運用から開始</h4>
+          <p>セミナー管理・運用ディレクションを中心に、現場理解と信頼形成。配信・フォローアップ運用も含む。</p>
+        </div>
+        <div class="phase-card">
+          <div class="phase-label">PHASE 2 · 3ヶ月目〜</div>
+          <h4>業ディレ調整を本格化</h4>
+          <p>業務範囲の整理・ワークフロー再設計を主導。星野さんの調整負荷を引き受ける。</p>
+        </div>
+        <div class="phase-card">
+          <div class="phase-label">PHASE 3 · 6ヶ月目〜</div>
+          <h4>PM昇格＋AIクルー全体管理</h4>
+          <p>プロフィットメーカー（時給1,500円）昇格。AIクルー全体の調整役として機能。最終的に管理マネージャーへ。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUTCOME ============ -->
+<section class="page outcome-bg" id="outcome">
+  <div class="page-inner">
+    <div class="section-num">PAGE 09 · EXPECTED OUTCOME</div>
+    <h2 class="section-title">期待される効果</h2>
+    <p class="section-sub">運営・組織・サービス・人の4軸で改善が見込めます。</p>
+
+    <h3 style="font-size:18px; font-weight:800; margin-bottom:16px; color:#6b4f8e;">■ 主要な期待効果（11項目）</h3>
+    <div class="outcome-grid">
+      <div class="outcome-card">
+        <div class="icon">⚙️</div>
+        <h4>業務ディレクター・<br>AIクルーの調整</h4>
+        <p>橋渡し役として組織内のズレを解消。</p>
+      </div>
+      <div class="outcome-card">
+        <div class="icon">🎤</div>
+        <h4>セミナーのスムーズな<br>進行・効率的運用</h4>
+        <p>運用設計の最適化で安定運営。</p>
+      </div>
+      <div class="outcome-card">
+        <div class="icon">⭐</div>
+        <h4>顧客満足度<br>大幅向上</h4>
+        <p>会員様体験のクオリティが底上げ。</p>
+      </div>
+      <div class="outcome-card">
+        <div class="icon">💰</div>
+        <h4>無駄コスト排除</h4>
+        <p>重複・抜け漏れによるロスを削減。</p>
+      </div>
+      <div class="outcome-card">
+        <div class="icon">🎯</div>
+        <h4>講師適正・<br>講師スキルアップ</h4>
+        <p>講師選定とディレクションで品質向上。</p>
+      </div>
+      <div class="outcome-card">
+        <div class="icon">😌</div>
+        <h4>AIクルー・業ディレの<br>ストレス軽減</h4>
+        <p>働きやすさが向上し、離職リスク低減。</p>
+      </div>
+      <div class="outcome-card">
+        <div class="icon">📈</div>
+        <h4>運用効率アップ</h4>
+        <p>標準化・整理により全体の生産性が上昇。</p>
+      </div>
+      <div class="outcome-card">
+        <div class="icon">🏠</div>
+        <h4>勤務環境改善</h4>
+        <p>「笑顔の80点」志向で持続可能な体制へ。</p>
+      </div>
+      <div class="outcome-card">
+        <div class="icon">🚀</div>
+        <h4>サービス向上</h4>
+        <p>運営・コンテンツ両面のクオリティアップ。</p>
+      </div>
+      <div class="outcome-card">
+        <div class="icon">🎨</div>
+        <h4>セミナー品質<br>の安定化</h4>
+        <p>専任ディレクションで運用品質が安定。</p>
+      </div>
+      <div class="outcome-card">
+        <div class="icon">🔄</div>
+        <h4>属人化リスク解消</h4>
+        <p>倉岡・星野さん依存から脱却し、運営体制を冗長化。</p>
+      </div>
+    </div>
+
+    <div class="impact-block">
+      <h3>👥 主要メンバーの業務軽減効果</h3>
+      <div class="impact-grid">
+        <div class="impact-item">
+          <div class="label">RELIEF FOR</div>
+          <div class="name">倉岡</div>
+          <p>セミナー運営・配信実務から解放。管理・企画・戦略へ集中可能。</p>
+        </div>
+        <div class="impact-item">
+          <div class="label">RELIEF FOR</div>
+          <div class="name">星野さん</div>
+          <p>やむを得ず兼務している調整役・仕組み作りを引き渡し。本来業務へ集中。</p>
+        </div>
+        <div class="impact-item">
+          <div class="label">RELIEF FOR</div>
+          <div class="name">羽田さん</div>
+          <p>COO／AIX事業PMとして、AIクルー調整から解放。事業推進に専念。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COST ============ -->
+<section class="page cost-bg" id="cost">
+  <div class="page-inner">
+    <div class="section-num">PAGE 10 · COST & ROI</div>
+    <h2 class="section-title">稼働コスト・投資対効果</h2>
+    <p class="section-sub">月10万円以下の投資で、運営機能・組織機能・人材機能を一括補完。</p>
+
+    <div class="cost-card">
+      <h3 style="font-size:20px; font-weight:800; margin-bottom:20px;">月額稼働コスト試算</h3>
+      <table class="cost-table">
+        <thead>
+          <tr>
+            <th>期間</th>
+            <th>役職</th>
+            <th>時給</th>
+            <th>稼働</th>
+            <th>月額コスト</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>4〜5月（初期）</td>
+            <td>業務委託パートナー</td>
+            <td>1,300円</td>
+            <td>3時間 × 20日</td>
+            <td class="total">78,000円</td>
+          </tr>
+          <tr>
+            <td>6月〜</td>
+            <td>プロフィットメーカー昇格</td>
+            <td>1,500円</td>
+            <td>3時間 × 20日</td>
+            <td class="total">90,000円</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="cost-note">
+        ※ 稼働時間は需要に応じて柔軟調整。セミナー繁忙期や配信集中期はスポット増あり。<br>
+        ※ 6月昇格は本人の貢献・評価次第で確定。段階的な信頼形成スタンスとも整合。
+      </div>
+    </div>
+
+    <div class="roi-block">
+      <h3>💡 投資対効果のポイント</h3>
+      <p>
+        <strong>月78,000〜90,000円</strong>の投資で、セミナー運用＋業ディレ調整＋AIクルー調整という<strong>組織横断の3機能</strong>を一括補完。
+        倉岡・星野さん・羽田さんの業務軽減も実現します。<br><br>
+        <strong>「正社員1人を採用するより、はるかに低コストで、組織機能を一括補完できる選択肢」</strong>です。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONDITIONS ============ -->
+<section class="page" id="conditions">
+  <div class="page-inner">
+    <div class="section-num">PAGE 11 · WORKING CONDITIONS</div>
+    <h2 class="section-title">想定する稼働条件</h2>
+    <p class="section-sub">無理なく続けられる範囲でのスタートを想定。</p>
+
+    <div class="conditions-grid">
+      <div class="cond-card">
+        <div class="cond-icon">⏰</div>
+        <h4>稼働時間</h4>
+        <div class="cond-value">1日 3時間 × 月20日</div>
+        <p>業務量に応じて柔軟調整。固定時間は設けない。</p>
+      </div>
+      <div class="cond-card">
+        <div class="cond-icon">📅</div>
+        <h4>稼働曜日</h4>
+        <div class="cond-value">月〜土（柔軟）</div>
+        <p>月曜のみ本業出社の可能性。事前調整で対応可。</p>
+      </div>
+      <div class="cond-card">
+        <div class="cond-icon">🏠</div>
+        <h4>稼働場所</h4>
+        <div class="cond-value">フルリモート</div>
+        <p>9:00〜23:00の中で柔軟に。</p>
+      </div>
+      <div class="cond-card">
+        <div class="cond-icon">🎬</div>
+        <h4>セミナー対応</h4>
+        <div class="cond-value">平日18時〜（60〜90分）</div>
+        <p>事前調整できれば対応可。必要時のみ依頼。</p>
+      </div>
+      <div class="cond-card">
+        <div class="cond-icon">🚀</div>
+        <h4>稼働開始</h4>
+        <div class="cond-value">即時可能</div>
+        <p>本日以降いつでもOK（本人合意済み）。</p>
+      </div>
+      <div class="cond-card">
+        <div class="cond-icon">🔗</div>
+        <h4>連携体制</h4>
+        <div class="cond-value">税理士AI大学＋業ディレ</div>
+        <p>倉岡・片山・星野の運営チーム＋業ディレ3名と連携。</p>
+      </div>
+    </div>
+
+    <div class="schedule-note">
+      <strong>📌 配慮ポイント:</strong> 1歳のお子様がおり、18時前後にお迎えが入る可能性あり。
+      ご家族の協力体制があり、事前調整次第で残業対応も可能とのこと。
+      セミナー本番のアシスタントは「必要時のみ依頼」のスタンスで運用予定。
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING ============ -->
+<section class="page closing" id="closing">
+  <div class="page-inner">
+    <div class="section-num" style="color:#b896d4;">FINAL · APPROVAL REQUEST</div>
+    <h2>運営最適化フェーズを支える<br>「不足機能そのもの」として推薦</h2>
+    <p>
+      AI活用とディレクション経験を兼ね備え、稼働の柔軟性も高く、本人の意欲もポジションと一致。
+      業ディレチームリーダーの星野さんも「組織的にも個人的にもめっちゃありがたい」と賛成。<br>
+      税理士AI大学のセミナー運用、業務ディレクターチームの調整、AIクルーの取りまとめを横断的に担う、最適なパートナーです。
+    </p>
+
+    <div class="key-message">
+      <div class="label">KEY MESSAGE</div>
+      <p>
+        「優秀な人を増やす」ではなく、<br>
+        「組織横断の3機能（セミナー運用／業ディレ調整／AIクルー調整）を、<br>
+        月10万円以下で一括補完する」アサインです。
+      </p>
+    </div>
+
+    <div class="approve-box">
+      <h3>📋 ご承認をお願いしたい事項</h3>
+      <p>
+        石井 佑香里さんを<br>
+        <strong>税理士AI大学 セミナー管理・運用ディレクター</strong><br>
+        <strong>兼 業務ディレクターチームコーディネーター</strong><br>
+        （いずれ管理マネージャーへ）<br>
+        として正式アサインすること<br><br>
+        ・4〜5月: 時給1,300円（月78,000円）<br>
+        ・6月〜: プロフィットメーカー昇格 時給1,500円（月90,000円）<br>
+        ・併せてAIクルー（業務委託メンバー）の調整役にも抜擢
+      </p>
+    </div>
+
+    <div class="signature">
+      作成: 倉岡<br>
+      作成日: 2026年4月30日
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
